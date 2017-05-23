@@ -205,7 +205,7 @@ $(sd)/seeg/gain.mat: $(sd)/seeg/seeg.xyz $(sd)/mri/$(aa).xyz
 
 # }}}
 
-include VEP.mk
+-include VEP.mk
 
 # Conversion rules# {{{
 %.RAS.nii.gz: %.mgz
