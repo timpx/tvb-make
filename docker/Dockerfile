@@ -98,3 +98,16 @@ ENV PYTHONPATH /opt/tvb-library:/opt/tvb-data:$PYTHONPATH
 EXPOSE 8888
 EXPOSE 8000
 # }}}
+
+# OpenCL
+ADD opencl_runtime_*.tar.gz /opt/
+RUN apt-get install -y cpio \
+ && cd opencl* \
+ && sed -i 's,decline,accept,g' silent.cfg \
+ && ./install.sh -s silent.cfg \
+ && cd .. \
+ && rm -rf opencl*
+
+
+
+RUN apt-get install -y vim-nox
